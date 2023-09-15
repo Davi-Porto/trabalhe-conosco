@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="../script/main.js" defer></script>
+    <style>
+        *.btn:hover,
+        *.btn:active{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://partiuviajar.tur.br/wp-content/themes/partiu-viajar/images/new-logo.svg img-logo -->
+    <!-- https://partiuviajar.tur.br/wp-content/themes/partiu-viajar/images/patterns/account-bg.jpg fundo -->
+    <div class="paralaxBack"></div>
+    <main>
+        <form>
+            <img src="https://partiuviajar.tur.br/wp-content/themes/partiu-viajar/images/new-logo.svg" alt="Logo 'Partiu Viajar'">
+            <h1>trabalhe conosco</h1>
+            <div class="flex-column form">
+                <div class="lineForm"><input required type="text" maxlength="45" placeholder="Nome Completo" autocomplete="name"></div>
+                <div class="lineForm"><label style="margin-right: 10px;" for="inputDtNasc">Data de Nascimento:</label><input type="date" required></div>
+                <div class="lineForm"><input required type="text" placeholder="Nacionalidade"></div>
+                <hr style="margin: 10px 0;">
+                <div class="endereco">
+                    <div class="lineForm"><input required type="text" placeholder="CEP" id="cep" onkeypress="$(this).mask('00.000-000');"></div>
+                    <div class="lineForm"><input required type="text" placeholder="Endereço" id="endereco"></div>
+                    <div class="lineForm"><input required type="number" placeholder="Número" id="numero"></div>
+                    <div class="lineForm"><input required type="text" placeholder="Complemento"></div>
+                </div>
+                <hr style="margin: 10px 0;">
+                <div class="flex-column contatos">
+                    <div class="lineForm"><input required type="text" placeholder="Contato Pessoal" autocomplete="cc-number" onkeypress="$(this).mask('+#9 (00) 0000-00009')"></div>
+                    <div class="lineForm"><input type="email" placeholder="Email" autocomplete="email"></div>
+                    <div class="lineForm">
+                        <label for="inputRedeSocial">Redes Sociais:</label>
+                        <select id="inputRedeSocial" required>
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="null">Nenhuma</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="linkedin">LinkedIn</option>
+                        </select>
+                    </div>
+                    <div id="redeSocialInp" class="hide">
+                        <div class="lineForm"><input required type="text" id="redeSocial"></div>
+                    </div>
+                </div>
+                <div class="pessoaJuridica">
+                    <div class="radioArea">
+                        <label for="simOuNao">Pessoa jurídica?</label>
+                        <div class="simOuNao">
+                            <div><label for="simCNPJ">Sim</label><input type="radio" name="pessoaJuridica" id="simCNPJ" checked></div>
+                            <div><label for="naoCPF">Não</label><input type="radio" name="pessoaJuridica" id="naoCPF"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="lineForm cpfOuCnpj"><input required type="text" id="inputCNPJ" onkeypress="$(this).mask('000.000.000-00');" placeholder="CNPJ"></div>
+                        <div class="lineForm hide cpfOuCnpj"><input required type="text" id="inputCPF" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00');"></div>
+                    </div>
+                </div>
+                <div class="credencial">
+                    <div class="radioArea">
+                        <label for="simOuNao">Possui credencial?</label>
+                        <div class="simOuNao">
+                            <div><label for="simCredencial">Sim</label><input type="radio" name="credencial" id="simCredencial"></div>
+                            <div><label for="naoCredencial">Não</label><input type="radio" name="credencial" id="naoCredencial" checked></div>
+                        </div>
+                    </div>
+                    <div class="hide credencialOuNao">
+                        <div class="lineForm"><input required type="number" id="inputCredencial" placeholder="Qual?"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="continuar">
+                <a class="btn" href="#dadosProfissionais" id="continuaBtn" onclick="
+                    window.document.querySelector('.secondPart').style.display = 'flex'
+                ">Continuar</a>
+            </div>
+            <a href="../index.html">Voltar para home</a>
+            <section class="secondPart">
+                <h1 id="dadosProfissionais">trabalhe conosco</h1>
+                <!-- Escolaridade ,Formação acadêmica ,Cursos específicos e  Experiências Profissionais tbm -->
+                <div class="form">
+                    <label for="escolaridade">Escolaridade:</label>
+                    <select id="escolaridade" name="escolaridade" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="pre-escola">Pré-Escola Completa</option>
+                        <option value="ensino-fundamental">Ensino Fundamental Completo</option>
+                        <option value="ensino-medio">Ensino Médio Completo</option>
+                        <option value="graduacao">Graduação</option>
+                    </select>
+                    <label for="formacao">Formação acadêmica:</label>
+                    <select id="formacao" name="formacao" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="graduacao">Graduação</option>
+                        <option value="pos-graduacao">Pós-Graduação</option>
+                        <option value="tecnicoProf">Ensino Técnico ou Profissionalizante</option>
+                        <option value="superiorInc">Ensino Superior Incompleto</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <div class="lineForm">
+                        <input class="hide" type="text" id="outrosFormacao" placeholder="Outras formações">
+                    </div>
+                    <label for="cursos">Cursos específicos:</label>
+                    <div class="lineForm">
+                        <textarea id="cursos" placeholder="Cursos realizados:"></textarea>
+                    </div>
+                    <label for="cursos">Experiencias profissionais:</label>
+                    <div class="lineForm">
+                        <textarea id="experiencias" placeholder="Suas experiencias:"></textarea>
+                    </div>
+                </div>
+                <div class="continuar">
+                    <button class="btn" type="submit">Requisitar</button>
+                </div>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
