@@ -4,17 +4,11 @@ window.document.querySelector("#cep").addEventListener('input', (e) => {
 
 window.document.querySelectorAll("input[type='radio']").forEach((v) => {
     v.addEventListener('change', (e) => {
-        if(e.target.id == "simCNPJ" || e.target.id == "naoCPF" ){
-            window.document.querySelectorAll(".cpfOuCnpj").forEach((v) => {
-                v.classList.toggle("hide");
-                v.childNodes.forEach((value) => value.value = "");
-            })
-        }else if (e.target.id == "simCredencial" ||e.target.id == "naoCredencial"){
+        if(e.target.id == "simCredencial" ||e.target.id == "naoCredencial"){
             window.document.querySelector(".credencialOuNao").classList.toggle("hide");
             window.document.querySelector("#inputCredencial").value = "";
             toBottom();
         }
-        console.log(e)
     })
 })
 
@@ -78,3 +72,8 @@ window.document.querySelector("#formacao").addEventListener('change', (e) => {
     }
     window.document.querySelector("#outrosFormacao").value = "";
 })
+
+
+function success() {
+    window.alert("Sucesso");
+}

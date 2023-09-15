@@ -29,18 +29,18 @@
             <h1>trabalhe conosco</h1>
             <div class="flex-column form">
                 <div class="lineForm"><input required type="text" maxlength="45" placeholder="Nome Completo" autocomplete="name"></div>
-                <div class="lineForm"><label style="margin-right: 10px;" for="inputDtNasc">Data de Nascimento:</label><input type="date" required></div>
+                <div class="lineForm"><label style="margin-right: 10px;" for="inputDtNasc">Data de Nascimento:</label><input type="date" required value=""></div>
                 <div class="lineForm"><input required type="text" placeholder="Nacionalidade"></div>
                 <hr style="margin: 10px 0;">
                 <div class="endereco">
-                    <div class="lineForm"><input required type="text" placeholder="CEP" id="cep" onkeypress="$(this).mask('00.000-000');"></div>
+                    <div class="lineForm"><input required type="text" placeholder="CEP" id="cep" oninput="$(this).mask('00000-000');"></div>
                     <div class="lineForm"><input required type="text" placeholder="Endereço" id="endereco"></div>
                     <div class="lineForm"><input required type="number" placeholder="Número" id="numero"></div>
-                    <div class="lineForm"><input required type="text" placeholder="Complemento"></div>
+                    <div class="lineForm"><input required type="text" placeholder="Compl."></div>
                 </div>
                 <hr style="margin: 10px 0;">
                 <div class="flex-column contatos">
-                    <div class="lineForm"><input required type="text" placeholder="Contato Pessoal" autocomplete="cc-number" onkeypress="$(this).mask('+#9 (00) 0000-00009')"></div>
+                    <div class="lineForm"><input required type="text" placeholder="Contato Pessoal" oninput="$(this).mask('+#9 (00) 0000-00009')"></div>
                     <div class="lineForm"><input type="email" placeholder="Email" autocomplete="email"></div>
                     <div class="lineForm">
                         <label for="inputRedeSocial">Redes Sociais:</label>
@@ -56,18 +56,9 @@
                         <div class="lineForm"><input required type="text" id="redeSocial"></div>
                     </div>
                 </div>
+                <hr style="margin: 10px 0;">
                 <div class="pessoaJuridica">
-                    <div class="radioArea">
-                        <label for="simOuNao">Pessoa jurídica?</label>
-                        <div class="simOuNao">
-                            <div><label for="simCNPJ">Sim</label><input type="radio" name="pessoaJuridica" id="simCNPJ" checked></div>
-                            <div><label for="naoCPF">Não</label><input type="radio" name="pessoaJuridica" id="naoCPF"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="lineForm cpfOuCnpj"><input required type="text" id="inputCNPJ" onkeypress="$(this).mask('000.000.000-00');" placeholder="CNPJ"></div>
-                        <div class="lineForm hide cpfOuCnpj"><input required type="text" id="inputCPF" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00');"></div>
-                    </div>
+                    <div class="lineForm"><input required type="text" id="inputCNPJ" oninput="$(this).mask('00.000.000/0000-00');" placeholder="CNPJ"></div>
                 </div>
                 <div class="credencial">
                     <div class="radioArea">
@@ -122,7 +113,7 @@
                     </div>
                 </div>
                 <div class="continuar">
-                    <button class="btn" type="submit">Requisitar</button>
+                    <button class="btn" type="submit" onsubmit="success()">Requisitar</button>
                 </div>
             </section>
         </form>

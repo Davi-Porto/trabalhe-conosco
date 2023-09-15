@@ -12,7 +12,7 @@
   height: 100%;
   z-index: -1;
   background-image: url("https://partiuviajar.tur.br/wp-content/themes/partiu-viajar/images/patterns/account-bg.jpg");
-  background-repeat: repeat-x;
+  background-repeat: repeat;
 }
 
 body {
@@ -33,14 +33,14 @@ body {
 h1 {
   text-transform: capitalize;
   font-size: 2em;
+  text-align: center;
 }
 
 main {
   width: 100%;
 }
 
-main > form,
-section {
+main > form{
   background: white;
   padding: 30px;
   border-radius: 15px;
@@ -52,10 +52,18 @@ section {
   flex-direction: column;
   gap: 30px;
 }
+section{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
 main > form > .form,
 section > .form {
   width: 100%;
-  padding: 0 25%;
+  padding: 0 20%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -95,7 +103,7 @@ a:hover {
 input[type=text],
 input[type=number],
 input[type=email],
-input[type=date] {
+input[type=date]{
   border: 1px solid gray;
   border-radius: 10px;
   padding: 15px;
@@ -177,6 +185,7 @@ textarea {
   width: 100%;
   resize: vertical;
   min-height: 40px;
+  height: 40px;
   border-radius: 10px;
   border: 1px solid gray;
   outline: none;
@@ -184,4 +193,19 @@ textarea {
 
 textarea:focus {
   border-width: 2px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media(max-width: 590px){
+  main > form > .form,
+  section > .form {
+    padding: 0;
+  }
+  main img {
+    scale: 0.8;
+  }
+  section textarea {
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
