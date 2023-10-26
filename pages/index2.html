@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/global.css">
+    <script src="../script/init.js" defer></script>
+    <script src="../script/main.js" defer></script>
+    <title>Trabalhe Conosco</title>
+</head>
+<body>
+    <div id="background-image"></div>
+    <div class="modal" id="confereModal" tabindex="1"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confira os dados</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="nm_confere">
+                        <strong>Nome: </strong>
+                        <span></span>
+                        <a href="#nameInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="dt_nasc_confere">
+                        <strong>Data de Nascimento: </strong>
+                        <span></span>
+                        <a href="#nascInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_nac_confere">
+                        <strong>Nacionalidade: </strong>
+                        <span></span>
+                        <a href="#selectNac" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="cd_cep_confere">
+                        <strong>CEP: </strong>
+                        <span></span>
+                        <a href="#cepInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_endereco_confere">
+                        <strong>Endereço: </strong>
+                        <span></span>
+                        <a href="#logradouroInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="sg_uf_confere">
+                        <strong>Estado: </strong>
+                        <span></span>
+                        <a href="#UFInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_cidade_confere">
+                        <strong>Cidade: </strong>
+                        <span></span>
+                        <a href="#cidInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_bairro_confere">
+                        <strong>Bairro: </strong>
+                        <span></span>
+                        <a href="#bairroInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="cd_numero_confere">
+                        <strong>Número: </strong>
+                        <span></span>
+                        <a href="#numberInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_complemento_confere">
+                        <strong>Complemento: </strong>
+                        <span></span>
+                        <a href="#compInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="cd_telefone_confere">
+                        <strong>Telefone: </strong>
+                        <span></span>
+                        <a href="#phoneInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_email_confere">
+                        <strong>E-mail: </strong>
+                        <span></span>
+                        <a href="#emailInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_username_confere" hidden>
+                        <strong></strong>
+                        <span></span>
+                        <a href="#usernameInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="cd_cnpj_confere">
+                        <strong>CNPJ: </strong>
+                        <span></span>
+                        <a href="#cnpjInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="cd_credencial_confere" hidden>
+                        <strong>Credencial: </strong>
+                        <span></span>
+                        <a href="#credencialInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_escolaridade_confere">
+                        <strong>Escolaridade: </strong>
+                        <span></span>
+                        <a href="#escolaridadeInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_formacao_confere">
+                        <strong>Formação Acadêmica: </strong>
+                        <span></span>
+                        <a href="#formacaoInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_cursos_confere" hidden>
+                        <strong>Cursos: </strong>
+                        <span></span>
+                        <a href="#cursosInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                    <p id="nm_experiencias_confere" hidden>
+                        <strong>Experiências: </strong>
+                        <span></span>
+                        <a href="#experienciasInput" class="link-opacity-75 link-opacity-100-hover" data-bs-dismiss="modal" data-bs-target="#confereModal" onclick="editInput(this)">Editar</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="myForm" class="btn btn-primary" data-bs-dismiss="modal">Finalizar requisição</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="container-fluid p-5">
+        <form id="myForm" class="col-12 col-lg-8 m-auto p-5 border shadow-lg rounded bg-body" method="POST">
+            <div class="container-fluid d-flex justify-content-center mb-3">
+                <a href="./index.html"><img src="../style/assets/logo.svg" alt="Logo Partiu viajar"></a>
+            </div>
+            <h1 class="fs-3 text-center mb-3">Trabalhe Conosco</h1>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nameInput" placeholder="Nome completo">
+                <label>Nome Completo</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="nascInput" placeholder="Data de nascimento">
+                <label>Data de Nascimento</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select id="selectNac" class="form-select" required>
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <label>Nascionalidade</label>
+            </div>
+            <hr>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" data-mask="00000-000" data-mask-clearifnotmatch="true" placeholder="_____-___" id="cepInput">
+                <label>CEP</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Logradouro" id="logradouroInput">
+                <label>Endereço</label>
+            </div>
+            <div class="row">
+                <div class="col col-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="UFInput" placeholder="Estado">
+                        <label>Estado</label>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-5">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="cidInput" placeholder="Cidade">
+                        <label>Cidade</label>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="bairroInput" placeholder="Bairro">
+                        <label>Bairro</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12 col-lg-3">
+                    <div class="form-floating mb-3">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" placeholder="Número" data-mask="0#" id="numberInput">
+                            <label>Número</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-9">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Complemento" id="compInput">
+                        <label>Complemento</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col col-12 col-lg-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Número de telefone" data-mask="(00) 00000-0000" data-mask-clearifnotmatch="true" id="phoneInput">
+                        <label>Telefone</label>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-8">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" placeholder="E-mail" id="emailInput" autocomplete="email">
+                        <label>E-mail</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <select class="form-select" id="redesSociais">
+                            <option selected disabled value="">Selecione</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="twitter">Twitter</option>
+                        </select>
+                        <label>Redes sociais</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" placeholder="Username" id="usernameInput">
+                        <label>Username</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="CNPJ" data-mask="00.000.000/0000-00" data-mask-clearifnotmatch="true" id="cnpjInput">
+                <label>CNPJ</label>
+            </div>
+            <span class="fs-5">Possui credencial?</span>
+            <div class="row d-flex align-items-center mb-5">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="credencialRadio" id="credencialRadio1" checked>
+                        <label class="form-check-label" for="credencialRadio1">Não</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" id="credencialRadio2" name="credencialRadio">
+                        </div>
+                        <input type="text" class="form-control" placeholder="Ex.: UND-7K4@..." id="credencialInput">
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating d-flex flex-column align-items-center gap-2">
+                <input class="btn btn-primary" type="button" value="Continuar" id="btnContinue">
+                <p><a class="link-opacity-100" href="./index.html">Voltar ao início</a></p>
+            </div>
+            <div class="collapse" id="continuationForm">
+                <div class="form-floating mb-3">
+                    <select id="escolaridadeInput" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option value="Pré-Escola Completa">Pré-Escola Completa</option>
+                        <option value="Ensíno Fundamental Completo">Ensíno Fundamental Completo</option>
+                        <option value="Ensíno Médio Completo">Ensíno Médio Completo</option>
+                        <option value="Graduação">Graduação</option>
+                    </select>
+                    <label>Escolaridade</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select id="formacaoInput" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option value="Graduação">Graduação</option>
+                        <option value="Pós Graduação">Pós Graduação</option>
+                        <option value="Ensíno Técnico ou Profissionalizante">Ensíno Técnico ou Profissionalizante</option>
+                        <option value="Ensíno Superior Incompleto">Ensíno Superior Incompleto</option>
+                        <option value="Nenhuma">Nenhuma</option>
+                    </select>
+                    <label>Formacao Acâdemica</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="cursosInput" rows="3" placeholder="Cursos"></textarea>
+                    <label>Cursos</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="experienciasInput" rows="3" placeholder="Experiências"></textarea>
+                    <label>Experiências Profissionais</label>
+                </div>
+                <div class="form-floating d-flex flex-column align-items-center gap-2">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#confereModal" id="requestBtn">Requisitar</button>
+                    <p><a class="link-opacity-100" href="./index.html">Voltar ao início</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/373151a956.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</html>
