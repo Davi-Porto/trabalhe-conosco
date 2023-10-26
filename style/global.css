@@ -11,7 +11,7 @@
     z-index: -10;
     width: 100vw;
     height: 100vh;
-    background-image: url("./assets/bg.jpg");
+    background-image: url("https://partiuviajar.tur.br/wp-content/themes/partiu-viajar/images/patterns/account-bg.jpg");
 }
 #background-image::after{
     content: '';
